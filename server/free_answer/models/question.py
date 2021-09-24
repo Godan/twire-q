@@ -15,6 +15,6 @@ class Question(BaseModel):
     aggregate_start_time = models.DateTimeField(_("集計開始時間"), null=True, blank=True, default=None) 
     aggregate_end_time = models.DateTimeField(_("集計終了"), null=True, blank=True, default=None)
 
-    def start_aggreagate(self) -> None:
+    def start_aggregate(self) -> None:
         self.aggregate_start_time = datetime.now()
         self.save()
