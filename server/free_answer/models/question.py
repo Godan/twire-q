@@ -18,3 +18,7 @@ class Question(BaseModel):
     def start_aggregate(self) -> None:
         self.aggregate_start_time = datetime.now()
         self.save()
+
+    def end_aggregate(self) -> None:
+        self.aggregate_end_time = datetime.now()
+        self.save()
