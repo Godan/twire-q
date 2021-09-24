@@ -1,9 +1,62 @@
 <mxfile host="65bd71144e">
-    <diagram id="GOqR8YtyA2vSJ25OqV8t" name="データ設計">
-        <mxGraphModel dx="1115" dy="555" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <diagram id="GOqR8YtyA2vSJ25OqV8t" name="モデル">
+        <mxGraphModel dx="1942" dy="555" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="自由記述な質問&lt;br&gt;&lt;br&gt;id&lt;br&gt;質問&lt;br&gt;ハッシュタグ&lt;br&gt;集計開始時間&lt;br&gt;集計終了時間" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="170" y="10" width="120" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="選択肢式アンケート&lt;br&gt;&lt;br&gt;id&lt;br&gt;質問&lt;br&gt;ハッシュタグ&lt;br&gt;集計開始時間&lt;br&gt;集計終了時間" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="160" y="270" width="120" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="4" target="3">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="選択肢&lt;br&gt;&lt;br&gt;選択式アンケートid&lt;br&gt;選択肢" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-80" y="270" width="120" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="6" target="4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="選択肢 ワード&lt;br&gt;&lt;br&gt;選択肢id&lt;br&gt;単語" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+                    <mxGeometry x="-310" y="270" width="120" height="180" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+    <diagram id="6lU9Hn3SCA0ZeRzFujRs" name="ユースケース">
+        <mxGraphModel dx="1115" dy="555" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="enGgnMpVPLx78lcTfKFi-0"/>
+                <mxCell id="enGgnMpVPLx78lcTfKFi-1" parent="enGgnMpVPLx78lcTfKFi-0"/>
+                <mxCell id="ENOsSWvU-oLAN2w4mxZn-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="enGgnMpVPLx78lcTfKFi-1" source="enGgnMpVPLx78lcTfKFi-2" target="ENOsSWvU-oLAN2w4mxZn-0">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ENOsSWvU-oLAN2w4mxZn-10" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;" edge="1" parent="enGgnMpVPLx78lcTfKFi-1" source="enGgnMpVPLx78lcTfKFi-2" target="ENOsSWvU-oLAN2w4mxZn-2">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ENOsSWvU-oLAN2w4mxZn-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="enGgnMpVPLx78lcTfKFi-1" source="enGgnMpVPLx78lcTfKFi-2" target="ENOsSWvU-oLAN2w4mxZn-4">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="ENOsSWvU-oLAN2w4mxZn-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="enGgnMpVPLx78lcTfKFi-1" source="enGgnMpVPLx78lcTfKFi-2" target="ENOsSWvU-oLAN2w4mxZn-6">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="enGgnMpVPLx78lcTfKFi-2" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="enGgnMpVPLx78lcTfKFi-1">
+                    <mxGeometry x="90" y="110" width="30" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="ENOsSWvU-oLAN2w4mxZn-0" value="質問を追加する" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="enGgnMpVPLx78lcTfKFi-1">
+                    <mxGeometry x="180" y="120" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="ENOsSWvU-oLAN2w4mxZn-2" value="集計を開始する" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="enGgnMpVPLx78lcTfKFi-1">
+                    <mxGeometry x="180" y="210" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="ENOsSWvU-oLAN2w4mxZn-4" value="集計を終了する" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="enGgnMpVPLx78lcTfKFi-1">
+                    <mxGeometry x="180" y="280" width="140" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="ENOsSWvU-oLAN2w4mxZn-6" value="結果を表示する&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="enGgnMpVPLx78lcTfKFi-1">
+                    <mxGeometry x="180" y="360" width="140" height="40" as="geometry"/>
+                </mxCell>
             </root>
         </mxGraphModel>
     </diagram>
