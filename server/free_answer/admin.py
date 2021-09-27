@@ -17,7 +17,13 @@ class QuestionAdmin(admin.ModelAdmin):
             )
             return mark_safe(f'<a class="button" href="{url}">集計開始</a>')
         elif question.aggregate_start_time and not question.aggregate_end_time:
-            return mark_safe(f'<a class="button" href="">集計終了</a>')
+            url = reverse_lazy(
+                "free_answer:end_aggregate", kwargs={"pk": question.pk}
+            ) 
+            return mark_safe(f'<a class="button" href="{url}">集計終了</a>')
+        else:
+            return mark_safe(f'<a class="button" href="">結果</a>')
+
 
 
 admin.site.register(Question, QuestionAdmin)

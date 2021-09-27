@@ -7,7 +7,7 @@ from django.urls import reverse
 
 from free_answer.models import Question
 from free_answer.application import FreeAnswerApplication
-# Create your views here.
+from infrastructures.twitter.adapter import TwitterAdapter
 
 class StartAggregate(LoginRequiredMixin, View):
     def get(self, request: HttpRequest, pk, *args, **kwargs):
@@ -15,4 +15,17 @@ class StartAggregate(LoginRequiredMixin, View):
         application: FreeAnswerApplication = FreeAnswerApplication()
 
         application.start_aggregate(question)
+        adapter = TwitterAdapter()
+        return redirect(reverse("admin:free_answer_question_changelist"))
+
+
+class EndAggregate(LoginRequiredMixin, View):
+    def get(self, request: HttpRequest, pk, *args, **kwargs):
+        question: Question = Question.objects.get(pk=pk)
+        application: FreeAnswerApplication = FreeAnswerApplication()
+
+        application.end_aggregate(question)
+        tweets = application.search_tweets_from_question(question)
+        application.save_tweets(question, tweets)
+
         return redirect(reverse("admin:free_answer_question_changelist"))

@@ -14,6 +14,7 @@ class Question(BaseModel):
     hashtag = models.CharField(_("ハッシュタグ"), max_length=100, null=False, blank=False)
     aggregate_start_time = models.DateTimeField(_("集計開始時間"), null=True, blank=True, default=None) 
     aggregate_end_time = models.DateTimeField(_("集計終了"), null=True, blank=True, default=None)
+    result_json = models.TextField(_("結果JSON"), blank=True, null=True, default=None) # TODO: 最終的にはTweet
 
     def start_aggregate(self) -> None:
         self.aggregate_start_time = datetime.now()
@@ -22,3 +23,5 @@ class Question(BaseModel):
     def end_aggregate(self) -> None:
         self.aggregate_end_time = datetime.now()
         self.save()
+
+    

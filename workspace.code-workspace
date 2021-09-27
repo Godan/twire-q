@@ -7,5 +7,10 @@
 			"path": "server"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"python.analysis.extraPaths": [
+			"httpx"
+		],
+		"python.languageServer": "Pylance"
+	}
 }
