@@ -1,10 +1,10 @@
 from django.shortcuts import render
-from django.views.generic import View
+from django.views.generic import View, DetailView
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpRequest, JsonResponse, HttpResponse
 from django.shortcuts import redirect
 from django.urls import reverse
-
+ 
 from free_answer.models import Question
 from free_answer.application import FreeAnswerApplication
 from infrastructures.twitter.adapter import TwitterAdapter
@@ -29,3 +29,15 @@ class EndAggregate(LoginRequiredMixin, View):
         application.save_tweets(question, tweets)
 
         return redirect(reverse("admin:free_answer_question_changelist"))
+
+class AnswerView(DetailView):
+    template_name = 'free_answer/answer.html'
+    model = Question
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        import json
+        context['tweets'] = json.loads(context["object"].result_json)
+        print(context['tweets'])
+
+        return context

@@ -22,7 +22,10 @@ class QuestionAdmin(admin.ModelAdmin):
             ) 
             return mark_safe(f'<a class="button" href="{url}">集計終了</a>')
         else:
-            return mark_safe(f'<a class="button" href="">結果</a>')
+            url = reverse_lazy(
+                "free_answer:answer", kwargs={"pk": question.pk}
+            ) 
+            return mark_safe(f'<a class="button" href="{url}">結果</a>')
 
 
 

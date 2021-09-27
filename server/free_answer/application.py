@@ -1,3 +1,4 @@
+import json
 
 
 from free_answer.models.question import Question
@@ -31,5 +32,5 @@ class FreeAnswerApplication:
         return tweets
 
     def save_tweets(self, question: Question, tweets: List[Any]) -> None:
-        question.result_json = tweets
+        question.result_json = json.dumps(tweets)
         question.save()
